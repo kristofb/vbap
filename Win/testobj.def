@@ -1,0 +1,4 @@
+LIBRARY testobj.mxe
+
+EXPORTS
+	main

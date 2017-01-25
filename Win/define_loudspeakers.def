@@ -1,0 +1,4 @@
+LIBRARY define_loudspeakers.mxe
+
+EXPORTS
+	main

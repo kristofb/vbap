@@ -1,0 +1,4 @@
+LIBRARY vbap.mxe
+
+EXPORTS
+	main
