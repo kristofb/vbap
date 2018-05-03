@@ -582,7 +582,7 @@ void vbap_bang(t_vbap *x)
         object_error(&x->x_ob,"Fatal error, trying to allocate %ld ls, but max is %ld", amount_allocated, MAX_LS_AMOUNT);
         return;
     }
-    float *final_gs = (float *) getbytes(amount_allocated * sizeof(float));
+    float *final_gs = (float *) malloc(amount_allocated * sizeof(float));
 
     if (x->x_lsset_available == 1)
     {
@@ -615,7 +615,7 @@ void vbap_bang(t_vbap *x)
         if (_enable_trace) { object_error(&x->x_ob, "vbap: Configure loudspeakers first!"); }
     }
 
-    freebytes(final_gs, amount_allocated * sizeof(float)); // bug fix added 9/00
+    free(final_gs);//freebytes(final_gs, amount_allocated * sizeof(float)); // bug fix added 9/00
 }
 
 /*--------------------------------------------------------------------------*/
