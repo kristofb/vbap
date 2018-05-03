@@ -22,8 +22,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		6D5CE901209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */; };
-		6D5CE902209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */; };
+		6D5CE905209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */; };
+		6D5CE906209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */; };
+		6D5CE907209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
+		6D5CE908209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
 		6D6F46DE09C17EDA003242AA /* vbap.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DC09C17EDA003242AA /* vbap.c */; };
 		6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */; };
 /* End PBXBuildFile section */
@@ -48,7 +50,8 @@
 /* Begin PBXFileReference section */
 		6D116AF009C41A0D00705233 /* Info-define_loudspeakers.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-define_loudspeakers.plist"; path = "src/Info-define_loudspeakers.plist"; sourceTree = "<group>"; };
 		6D116AF109C41A0D00705233 /* Info-vbap.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-vbap.plist"; path = "src/Info-vbap.plist"; sourceTree = "<group>"; };
-		6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../AppliMax/Cycling/SDKInUse/max-sdk-7.3.3/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		6D5CE904209AFB3500E24EB7 /* MaxLua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxLua.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxLua.framework"; sourceTree = "<group>"; };
 		6D6BB64509FCC38C00E26C50 /* define_loudspeakers.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = define_loudspeakers.h; path = src/define_loudspeakers.h; sourceTree = "<group>"; };
 		6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = define_loudspeakers.c; path = src/define_loudspeakers.c; sourceTree = "<group>"; };
 		6D6F46DC09C17EDA003242AA /* vbap.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = vbap.c; path = src/vbap.c; sourceTree = "<group>"; };
@@ -67,7 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5CE902209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */,
+				6D5CE908209AFB3500E24EB7 /* MaxLua.framework in Frameworks */,
+				6D5CE906209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5CE901209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */,
+				6D5CE907209AFB3500E24EB7 /* MaxLua.framework in Frameworks */,
+				6D5CE905209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +104,8 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */,
+				6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */,
+				6D5CE904209AFB3500E24EB7 /* MaxLua.framework */,
 				6D812195151859760054FAFB /* Accelerate.framework */,
 				6D812196151859760054FAFB /* ApplicationServices.framework */,
 				6D812197151859760054FAFB /* CoreFoundation.framework */,
@@ -324,6 +330,7 @@
 		};
 		6D12FC810949E8A100AA034B /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D81233215185E310054FAFB /* Cka-Max61Target.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -463,6 +470,7 @@
 		};
 		6D12FC830949E8A100AA034B /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D81233215185E310054FAFB /* Cka-Max61Target.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -530,6 +538,10 @@
 		6DB2D19709C17FF900B4D9B8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
@@ -541,6 +553,10 @@
 		6DB2D19809C17FF900B4D9B8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
@@ -551,6 +567,10 @@
 		6DB2D19909C17FF900B4D9B8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
