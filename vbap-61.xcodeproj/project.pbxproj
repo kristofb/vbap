@@ -22,9 +22,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		6D5CE901209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */; };
+		6D5CE902209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */; };
 		6D6F46DE09C17EDA003242AA /* vbap.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DC09C17EDA003242AA /* vbap.c */; };
-		6D81244615185EFC0054FAFB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8122971518599B0054FAFB /* MaxAPI.framework */; };
-		6D81244715185EFD0054FAFB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8122971518599B0054FAFB /* MaxAPI.framework */; };
 		6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */; };
 /* End PBXBuildFile section */
 
@@ -48,13 +48,13 @@
 /* Begin PBXFileReference section */
 		6D116AF009C41A0D00705233 /* Info-define_loudspeakers.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-define_loudspeakers.plist"; path = "src/Info-define_loudspeakers.plist"; sourceTree = "<group>"; };
 		6D116AF109C41A0D00705233 /* Info-vbap.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-vbap.plist"; path = "src/Info-vbap.plist"; sourceTree = "<group>"; };
+		6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../AppliMax/Cycling/SDKInUse/max-sdk-7.3.3/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		6D6BB64509FCC38C00E26C50 /* define_loudspeakers.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = define_loudspeakers.h; path = src/define_loudspeakers.h; sourceTree = "<group>"; };
 		6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = define_loudspeakers.c; path = src/define_loudspeakers.c; sourceTree = "<group>"; };
 		6D6F46DC09C17EDA003242AA /* vbap.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = vbap.c; path = src/vbap.c; sourceTree = "<group>"; };
 		6D812195151859760054FAFB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6D812196151859760054FAFB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		6D812197151859760054FAFB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		6D8122971518599B0054FAFB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "SDK/MaxSDK-5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		6D8122A1151859B40054FAFB /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		6D81233215185E310054FAFB /* Cka-Max61Target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Cka-Max61Target.xcconfig"; sourceTree = "<group>"; };
 		6DA5283609C30B730043F450 /* vbap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = vbap.h; path = src/vbap.h; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D81244615185EFC0054FAFB /* MaxAPI.framework in Frameworks */,
+				6D5CE902209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D81244715185EFD0054FAFB /* MaxAPI.framework in Frameworks */,
+				6D5CE901209AF51E00E24EB7 /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +99,10 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6D5CE900209AF51E00E24EB7 /* MaxAPI.framework */,
 				6D812195151859760054FAFB /* Accelerate.framework */,
 				6D812196151859760054FAFB /* ApplicationServices.framework */,
 				6D812197151859760054FAFB /* CoreFoundation.framework */,
-				6D8122971518599B0054FAFB /* MaxAPI.framework */,
 				6D8122A1151859B40054FAFB /* Carbon.framework */,
 			);
 			name = "External Frameworks and Libraries";
@@ -203,7 +203,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 6D12FC800949E8A100AA034B /* Build configuration list for PBXProject "vbap-61" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -325,15 +325,34 @@
 		6D12FC810949E8A100AA034B /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = MAX;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
@@ -341,6 +360,7 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = YES;
@@ -351,7 +371,8 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
@@ -360,7 +381,6 @@
 				SHARED_PRECOMPS_DIR = "/tmp/com.apple.Xcode.$(UID)/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
-				STRIP_STYLE = debugging;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -374,18 +394,36 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D81233215185E310054FAFB /* Cka-Max61Target.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXPORTED_SYMBOLS_FILE = maxmsp.exp;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = MAX;
 				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
@@ -393,6 +431,7 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = YES;
@@ -403,7 +442,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "-ftree-vectorize";
 				OTHER_CPLUSPLUSFLAGS = "-ftree-vectorize";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
@@ -412,8 +451,7 @@
 				SEPARATE_STRIP = YES;
 				SHARED_PRECOMPS_DIR = "/tmp/com.apple.Xcode.$(UID)/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
-				STRIPFLAGS = "-x -u";
-				STRIP_STYLE = all;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -426,15 +464,33 @@
 		6D12FC830949E8A100AA034B /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = MAX;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
 				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
@@ -442,6 +498,7 @@
 				GCC_WARN_MISSING_PARENTHESES = YES;
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_LABEL = YES;
@@ -452,7 +509,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
@@ -460,7 +517,7 @@
 				SDKROOT = macosx;
 				SHARED_PRECOMPS_DIR = "/tmp/com.apple.Xcode.$(UID)/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
-				STRIP_STYLE = debugging;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -473,10 +530,7 @@
 		6DB2D19709C17FF900B4D9B8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
@@ -487,9 +541,6 @@
 		6DB2D19809C17FF900B4D9B8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
@@ -500,10 +551,7 @@
 		6DB2D19909C17FF900B4D9B8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
@@ -514,10 +562,7 @@
 		6DFFFFEF09BCB6A800CCE709 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
@@ -527,9 +572,6 @@
 		6DFFFFF009BCB6A800CCE709 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
@@ -539,10 +581,7 @@
 		6DFFFFF109BCB6A800CCE709 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /Storage/Projets/Maximus/Objets/Max6/vbap;
-				FRAMEWORK_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "/Users/kristof/Desktop/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-6.1/c74support/**";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
