@@ -8,6 +8,7 @@ Unversity of California at Berkeley
 See copyright in file with name COPYRIGHT  */
 
 #include "define_loudspeakers.h"
+#include "vbap.h"
 
 #ifndef VBAP_OBJECT
 // If we are within VBAP (which includes define_loudspeakers), then don't create a main for define_loudspeakres
@@ -558,13 +559,13 @@ float vol_p_side_lgth(int i, int j, int k, t_ls lss[MAX_LS_AMOUNT])
     lgth   = (fabsf(vec_angle(lss[i], lss[j]))
               + fabsf(vec_angle(lss[i], lss[k]))
               + fabsf(vec_angle(lss[j], lss[k])));
-    if (lgth > 0.00001)
+    if (lgth > 0.00001f)
     {
         return volper / lgth;
     }
     else
     {
-        return 0.0;
+        return 0.0f;
     }
 }
 
@@ -847,9 +848,9 @@ void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], int ls_
     {
         ls_angles_to_cart(&lss[i]);
         lss[i].azi = acosf(lss[i].x) * rad2ang;
-        if (fabs(lss[i].y) <= 0.001)
+        if (fabs(lss[i].y) <= 0.001f)
         {
-            tmp = 1.0;
+            tmp = 1.0f;
         }
         else
         {
@@ -859,7 +860,7 @@ void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], int ls_
     }
     for (int i = 0; i < ls_amount; i++)
     {
-        tmp = 2000;
+        tmp = 2000.f;
         int      index = 0;
         for (int j     = 0; j < ls_amount; j++)
         {
@@ -871,12 +872,12 @@ void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], int ls_
         }
         sorted_lss[i] = index;
         tmp_azi = (lss[index].azi);
-        lss[index].azi = (tmp_azi + (float) 4000.0);
+        lss[index].azi = (tmp_azi + 4000.0f);
     }
     for (int i = 0; i < ls_amount; i++)
     {
         tmp_azi = (lss[i].azi);
-        lss[i].azi = (tmp_azi - (float) 4000.0);
+        lss[i].azi = (tmp_azi - 4000.0f);
     }
 }
 
@@ -893,13 +894,13 @@ int calc_2D_inv_tmatrix(float azi1, float azi2, float inv_mat[4], float mat[4])
     mat[2] = x3 = cosf(azi2 / rad2ang);
     mat[3] = x4 = sinf(azi2 / rad2ang);
     det = (x1 * x4) - (x3 * x2);
-    if (fabsf(det) <= 0.001)
+    if (fabsf(det) <= 0.001f)
     {
 
-        inv_mat[0] = 0.0;
-        inv_mat[1] = 0.0;
-        inv_mat[2] = 0.0;
-        inv_mat[3] = 0.0;
+        inv_mat[0] = 0.0f;
+        inv_mat[1] = 0.0f;
+        inv_mat[2] = 0.0f;
+        inv_mat[3] = 0.0f;
         return 0;
     }
     else
