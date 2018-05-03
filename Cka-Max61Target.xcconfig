@@ -50,4 +50,4 @@ C74_SYM_LINKER_FLAGS = @$(C74SUPPORT)/max-includes/c74_linker_flags.txt
 
 // hide all symbols by default
 // mark a function to be exported with the C74_EXPORT macro -- most likely this will only apply to the main() function
-OTHER_CFLAGS = -fvisibility=hidden
+//OTHER_CFLAGS = -fvisibility=hidden
