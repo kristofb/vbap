@@ -85,7 +85,7 @@ void def_ls_int(t_def_ls *x, long n)		// x = the instance of the object, n = the
 void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 // when loudspeaker triplets come in a message
 {
-    t_ls_set *trip_ptr, *tmp_ptr, *prev;
+    t_ls_set *trip_ptr, *tmp_ptr;
     if (x->x_ls_read == 0)
     {
         object_error(&x->x_ob, "define_loudspeakers: Define loudspeaker directions first!");
@@ -99,7 +99,6 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
     }
 
     trip_ptr = x->x_ls_set;
-    prev     = NULL;
     while (trip_ptr != NULL)
     {
         tmp_ptr  = trip_ptr;
@@ -171,9 +170,9 @@ void ls_angles_to_cart(t_ls *ls)
 {
     float azi = ls->azi;
     float ele = ls->ele;
-    ls->x = cosf((float) azi * atorad) * cosf((float) ele * atorad);
-    ls->y = sinf((float) azi * atorad) * cosf((float) ele * atorad);
-    ls->z = sinf((float) ele * atorad);
+    ls->x = cosf(azi * atorad) * cosf(ele * atorad);
+    ls->y = sinf(azi * atorad) * cosf(ele * atorad);
+    ls->z = sinf(ele * atorad);
 }
 
 #ifndef VBAP_OBJECT
@@ -181,8 +180,7 @@ void ls_angles_to_cart(t_ls *ls)
 void *def_ls_new(t_symbol *s, int ac, t_atom *av)
 {
     // s is object name (we ignore it)
-    //t_def_ls *x = (t_def_ls *)newobject(def_ls_class);
-    t_def_ls *x = (t_def_ls *) object_alloc((t_class *) def_ls_class);
+    t_def_ls *x = (t_def_ls *) object_alloc(def_ls_class);
 
     x->x_outlet0 = outlet_new(x, 0L);    /* create a (list) outlet */
 
@@ -511,15 +509,14 @@ void add_ldsp_triplet(int i, int j, int k, t_def_ls *x)
 float vec_angle(t_ls v1, t_ls v2)
 // angle between two loudspeakers
 {
-    float inner = ((v1.x * v2.x + v1.y * v2.y + v1.z * v2.z) /
-                   (vec_length(v1) * vec_length(v2)));
+    float inner = ((v1.x * v2.x + v1.y * v2.y + v1.z * v2.z) / (vec_length(v1) * vec_length(v2)));
     if (inner > 1.0)
     {
-        inner = 1.0;
+        inner = 1.0f;
     }
     if (inner < -1.0)
     {
-        inner = -1.0;
+        inner = -1.0f;
     }
     return fabsf(acosf(inner));
 }
@@ -607,19 +604,19 @@ int lines_intersect(int i, int j, int k, int l, t_ls lss[MAX_LS_AMOUNT])
     dist_lnv3 = (vec_angle(neg_v3, lss[l]));
 
     /* if one of loudspeakers is close to crossing point, don't do anything*/
-    if (fabsf(dist_iv3) <= 0.01 || fabsf(dist_jv3) <= 0.01 ||
-        fabsf(dist_kv3) <= 0.01 || fabsf(dist_lv3) <= 0.01 ||
-        fabsf(dist_inv3) <= 0.01 || fabsf(dist_jnv3) <= 0.01 ||
-        fabsf(dist_knv3) <= 0.01 || fabsf(dist_lnv3) <= 0.01)
+    if (fabsf(dist_iv3) <= 0.01f || fabsf(dist_jv3) <= 0.01f ||
+        fabsf(dist_kv3) <= 0.01f || fabsf(dist_lv3) <= 0.01f ||
+        fabsf(dist_inv3) <= 0.01f || fabsf(dist_jnv3) <= 0.01f ||
+        fabsf(dist_knv3) <= 0.01f || fabsf(dist_lnv3) <= 0.01f)
     {
         return (0);
     }
 
     // if crossing point is on line between both loudspeakers return 1
-    if (((fabsf(dist_ij - (dist_iv3 + dist_jv3)) <= 0.01) &&
-         (fabsf(dist_kl - (dist_kv3 + dist_lv3)) <= 0.01)) ||
-        ((fabsf(dist_ij - (dist_inv3 + dist_jnv3)) <= 0.01) &&
-         (fabsf(dist_kl - (dist_knv3 + dist_lnv3)) <= 0.01)))
+    if (((fabsf(dist_ij - (dist_iv3 + dist_jv3)) <= 0.01f) &&
+         (fabsf(dist_kl - (dist_kv3 + dist_lv3)) <= 0.01f)) ||
+        ((fabsf(dist_ij - (dist_inv3 + dist_jnv3)) <= 0.01f) &&
+         (fabsf(dist_kl - (dist_knv3 + dist_lnv3)) <= 0.01f)))
     {
         return (1);
     }
@@ -632,15 +629,14 @@ int lines_intersect(int i, int j, int k, int l, t_ls lss[MAX_LS_AMOUNT])
 void calculate_3x3_matrixes(t_def_ls *x)
 /* Calculates the inverse matrices for 3D */
 {
-    float           invdet;
-    t_ls            *lp1, *lp2, *lp3;
-    float           *invmx;
-    //float *ptr;
-    struct t_ls_set *tr_ptr        = x->x_ls_set;
-    int             triplet_amount = 0, /*ftable_size,*/i, pointer, list_length = 0;
-    t_atom          *at;
-    t_ls            *lss           = x->x_ls;
+    float  invdet;
+    t_ls   *lp1, *lp2, *lp3;
+    float  *invmx;
+    int    i, pointer;
+    t_atom *at;
+    t_ls   *lss = x->x_ls;
 
+    struct t_ls_set *tr_ptr = x->x_ls_set;
     if (tr_ptr == NULL)
     {
         object_error(&x->x_ob, "define-loudspeakers: Not valid 3-D configuration\n");
@@ -648,19 +644,21 @@ void calculate_3x3_matrixes(t_def_ls *x)
     }
 
     /* counting triplet amount */
+    int triplet_amount = 0;
     while (tr_ptr != NULL)
     {
         triplet_amount++;
         tr_ptr = tr_ptr->next;
     }
-    tr_ptr                         = x->x_ls_set;
-    list_length                    = triplet_amount * 21 + 3;
-    at                             = (t_atom *) getbytes(list_length * sizeof(t_atom));
+
+    const int list_length = triplet_amount * 21 + 3;
+    at = (t_atom *) getbytes(list_length * sizeof(t_atom));
 
     atom_setlong(&at[0], x->x_def_ls_dimension);
     atom_setlong(&at[1], x->x_def_ls_amount);
     pointer = 2;
 
+    tr_ptr = x->x_ls_set;
     while (tr_ptr != NULL)
     {
         lp1 = &(lss[tr_ptr->ls_nos[0]]);
@@ -714,7 +712,6 @@ void calculate_3x3_matrixes(t_def_ls *x)
         tr_ptr = tr_ptr->next;
     }
     sendLoudspeakerMatrices(x, list_length, at);
-//  outlet_anything(x->x_outlet0, gensym("loudspeaker-matrices"), list_length, at);
     freebytes(at, list_length * sizeof(t_atom));
 }
 

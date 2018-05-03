@@ -115,8 +115,7 @@ void vbap_ft4(t_vbap *x, double g) { x->x_gain = g; }
 // create new instance of object... 
 void *vbap_new(long azi, long ele)
 {
-    //t_vbap *x = (t_vbap *)object_alloc(vbap_class);
-    t_vbap *x = (t_vbap *) object_alloc((t_class *) vbap_class);
+    t_vbap *x = (t_vbap *) object_alloc(vbap_class);
 
     floatin(x, 4);
     intin(x, 3);
@@ -248,12 +247,12 @@ void vbap(float g[3], long ls[3], t_vbap *x)
     // it means that the virtual source does not lie in that LS set.
 
     angle_to_cart(x->x_azi, x->x_ele, cartdir);
-    big_sm_g      = -100000.0;   // initial value for largest minimum gain value
+    big_sm_g      = -100000.0f;   // initial value for largest minimum gain value
     best_neg_g_am = 3;          // how many negative values in this set
 
     for (i = 0; i < x->x_lsset_amount; i++)
     {
-        small_g  = 10000000.0;
+        small_g  = 10000000.0f;
         neg_g_am = 3;
         for (j   = 0; j < dim; j++)
         {
@@ -359,20 +358,18 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
     int   i, j, k, gains_modified;
     float small_g;
     float big_sm_g, gtmp[3];
-    long  winner_set;
-    //float new_cartdir[3];
-    //float new_angle_dir[3];
+    //long  winner_set;
     long  dim   = x->x_dimension;
     long  neg_g_am, best_neg_g_am;
     float g[3]  = {0, 0, 0};
     long  ls[3] = {0, 0, 0};
 
-    big_sm_g      = -100000.0;
+    big_sm_g      = -100000.0f;
     best_neg_g_am = 3;
 
     for (i = 0; i < x->x_lsset_amount; i++)
     {
-        small_g  = 10000000.0;
+        small_g  = 10000000.0f;
         neg_g_am = 3;
         for (j   = 0; j < dim; j++)
         {
@@ -394,7 +391,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
         {
             big_sm_g      = small_g;
             best_neg_g_am = neg_g_am;
-            winner_set    = i;
+            //winner_set    = i;
             g[0]  = gtmp[0];
             g[1]  = gtmp[1];
             ls[0] = x->x_lsset[i][0];
