@@ -127,7 +127,7 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 		else if(av[i+2].a_type == A_FLOAT) 
 			l3 =  (long) av[i+2].a_w.w_float;
 
-		add_ldsp_triplet(l1-1,l2-1,l3-1,x);
+		add_ldsp_triplet((int)(l1-1),(int)(l2-1),(int)(l3-1),x);
 	}
 	x->x_triplets_specified=1;
 }
@@ -273,7 +273,7 @@ void choose_ls_triplets(t_def_ls *x)
   int distance_table_j[((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2)];
   float distance;
   t_ls_set *trip_ptr, *prev, *tmp_ptr;
-  int ls_amount = x->x_def_ls_amount;
+  int ls_amount = (int)x->x_def_ls_amount;
   t_ls *lss = x->x_ls;
   if (ls_amount == 0) { object_error(&x->x_ob,"define-loudspeakers: Number of loudspeakers is zero"); return; }
  
@@ -678,7 +678,7 @@ void choose_ls_tuplets(t_def_ls *x)
   }
 
   /* sort loudspeakers according their aximuth angle */
-  sort_2D_lss(x->x_ls,sorted_lss,ls_amount);
+  sort_2D_lss(x->x_ls,sorted_lss,(int)ls_amount);
 
   /* adjacent loudspeakers are the loudspeaker pairs to be used.*/
   for(i=0;i<(ls_amount-1);i++){
@@ -747,8 +747,7 @@ void choose_ls_tuplets(t_def_ls *x)
   freebytes(at, list_length*sizeof(Atom));
 }
 
-void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], 
-                 int ls_amount)
+void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], int ls_amount)
 // sort loudspeakers according to azimuth angle
 {
   float tmp, tmp_azi;

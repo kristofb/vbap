@@ -548,8 +548,8 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 	int datapointer = 0; 
  	if(ac>0) 
 	{
-		int d = 0;
- 		if(av[datapointer].a_type == A_LONG) d = (int) av[datapointer++].a_w.w_long;
+		long d = 0;
+ 		if(av[datapointer].a_type == A_LONG) d = (long) av[datapointer++].a_w.w_long;
 		else if(av[datapointer].a_type == A_FLOAT) d = (long)av[datapointer++].a_w.w_float;
 		else { object_error(&x->x_ob,"vbap: Dimension NaN"); x->x_lsset_available=0; return; }
 

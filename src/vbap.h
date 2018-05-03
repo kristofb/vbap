@@ -24,8 +24,8 @@
 #define MAX_LS_AMOUNT 55    // maximum amount of loudspeakers, can be increased
 #define MIN_VOL_P_SIDE_LGTH 0.01  
 
-#define VBAP_VERSION "vbap - v1.0.6 - 25 oct 2015 - (c) Ville Pulkki 1999-2016"
-#define DFLS_VERSION "define_loudspeakers - v1.0.6 - 7 sept 2015 - (c) Ville Pulkki 1999-2016"
+#define VBAP_VERSION "vbap - v1.0.7 - 3 may 2018 - (c) Ville Pulkki 1999-2018"
+#define DFLS_VERSION "define_loudspeakers - v1.0.7 - 3 may 2018 - (c) Ville Pulkki 1999-2018"
 
 static float rad2ang = (float)(360.0f / ( 2.0f * M_PI ));
 static float atorad = (float)((2.0f * M_PI) / 360.0f);
@@ -33,7 +33,7 @@ static float atorad = (float)((2.0f * M_PI) / 360.0f);
 #ifdef VBAP_OBJECT
 	// We are inside vbap object, so sending matrix from define_loudspeakers is a simple call to the vbap receiver...
 	#define sendLoudspeakerMatrices(x,list_length, at) \
-					vbap_matrix(x, gensym("loudspeaker-matrices"),list_length, at); \
+					vbap_matrix(x, gensym("loudspeaker-matrices"),(int)list_length, at); \
 					vbap_bang(x)
 #else
 	// We are inside define_loudspeaker object, send matrix to outlet
