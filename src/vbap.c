@@ -202,16 +202,14 @@ void cart_to_angle(float cvec[3], float avec[3])
 void vbap(float g[3], long ls[3], t_vbap *x)
 {
     /* calculates gain factors using loudspeaker setup and given direction */
-    float power;
-    int   i, j, k, gains_modified;
-    float small_g;
-    float big_sm_g, gtmp[3];
-    long  winner_set = 0;
-    float cartdir[3];
-    float new_cartdir[3];
-    float new_angle_dir[3];
-    long  dim        = x->x_dimension;
-    long  neg_g_am, best_neg_g_am;
+    float      power;
+    int        i, j, k, gains_modified;
+    float      small_g;
+    long       winner_set = 0;
+    float      cartdir[3];
+    float      new_cartdir[3];
+    float      new_angle_dir[3];
+    const long dim        = x->x_dimension;
 
     // transfering the azimuth angle to a decent value
     while (x->x_azi > 180)
@@ -239,7 +237,7 @@ void vbap(float g[3], long ls[3], t_vbap *x)
     {
         x->x_ele = 0;
     }
-
+    if (dim<2 || dim>3) return;
 
     // go through all defined loudspeaker sets and find the set which
     // has all positive values. If such is not found, set with largest
@@ -247,9 +245,11 @@ void vbap(float g[3], long ls[3], t_vbap *x)
     // it means that the virtual source does not lie in that LS set.
 
     angle_to_cart(x->x_azi, x->x_ele, cartdir);
-    big_sm_g      = -100000.0f;   // initial value for largest minimum gain value
-    best_neg_g_am = 3;          // how many negative values in this set
+    float big_sm_g = -100000.0f;   // initial value for largest minimum gain value
+    long best_neg_g_am = 3;          // how many negative values in this set
+    long neg_g_am;
 
+    float gtmp[3];
     for (i = 0; i < x->x_lsset_amount; i++)
     {
         small_g  = 10000000.0f;
@@ -301,7 +301,7 @@ void vbap(float g[3], long ls[3], t_vbap *x)
     gains_modified = 0;
     for (i         = 0; i < dim; i++)
     {
-        if (g[i] < -0.01)
+        if (g[i] < -0.01f)
         {
             g[i] = 0.0001f;
             gains_modified = 1;
@@ -572,16 +572,22 @@ void spread_it(t_vbap *x, float *final_gs)
 void vbap_bang(t_vbap *x)
 // top level, vbap gains are calculated and outputted	
 {
-    t_atom at[MAX_LS_AMOUNT];
-    float  g[3];
-    long   ls[3];
-    long   i;
-    float  *final_gs = (float *) getbytes(x->x_ls_amount * sizeof(float));
+    t_atom     at[MAX_LS_AMOUNT];
+    float      g[3];
+    long       ls[3];
+    long       i;
+    const long amount_allocated = x->x_ls_amount;
+    if (MAX_LS_AMOUNT < amount_allocated)
+    {
+        object_error(&x->x_ob,"Fatal error, trying to allocate %ld ls, but max is %ld", amount_allocated, MAX_LS_AMOUNT);
+        return;
+    }
+    float *final_gs = (float *) getbytes(amount_allocated * sizeof(float));
 
     if (x->x_lsset_available == 1)
     {
         vbap(g, ls, x);
-        for (i = 0; i < x->x_ls_amount; i++)
+        for (i = 0; i < amount_allocated; i++)
         {
             final_gs[i] = 0.0;
         }
@@ -593,7 +599,7 @@ void vbap_bang(t_vbap *x)
         {
             spread_it(x, final_gs);
         }
-        for (i = 0; i < x->x_ls_amount; i++)
+        for (i = 0; i < amount_allocated; i++)
         {
             atom_setlong(&at[0], i);
             atom_setfloat(&at[1], final_gs[i] * x->x_gain); // gain is applied here
@@ -609,7 +615,7 @@ void vbap_bang(t_vbap *x)
         if (_enable_trace) { object_error(&x->x_ob, "vbap: Configure loudspeakers first!"); }
     }
 
-    freebytes(final_gs, x->x_ls_amount * sizeof(float)); // bug fix added 9/00
+    freebytes(final_gs, amount_allocated * sizeof(float)); // bug fix added 9/00
 }
 
 /*--------------------------------------------------------------------------*/
@@ -663,6 +669,10 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
     }
 
     long counter = (ac - 2) / ((x->x_dimension * x->x_dimension * 2) + x->x_dimension);
+    if (counter > MAX_LS_SETS)
+    {
+        object_error(&x->x_ob,"Allocating %ld ls sets, but max is %ld", counter, MAX_LS_SETS);
+    }
     x->x_lsset_amount = counter;
 
     if (counter == 0)

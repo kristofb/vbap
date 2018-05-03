@@ -226,6 +226,11 @@ void initContent_ls_directions(t_def_ls *x, int ac, t_atom *av)
 
     int pointer = 1;
     x->x_def_ls_amount = (ac - 1) / (x->x_def_ls_dimension - 1);
+    if (x->x_def_ls_amount>MAX_LS_AMOUNT)
+    {
+        object_error(&x->x_ob,"def: Trying to set ls %ld, but max is %ld",x->x_def_ls_amount,MAX_LS_AMOUNT);
+        return;
+    }
 
     // read loudspeaker direction angles
     for (int i = 0; i < x->x_def_ls_amount; i++)
@@ -285,7 +290,7 @@ with Multiple Loudspeakers Using VBAP: A Case Study with
 DIVA Project" in International Conference on
 Auditory Displays -98.*/
 {
-    int      i, j, k, l,/*m,li,*/ table_size;
+    int      i, j, k, l;
     //int *i_ptr;
     //t_ls vb1,vb2,tmp_vec;
     int      connections[MAX_LS_AMOUNT][MAX_LS_AMOUNT];
@@ -303,7 +308,13 @@ Auditory Displays -98.*/
         object_error(&x->x_ob, "define-loudspeakers: Number of loudspeakers is zero");
         return;
     }
+    if (ls_amount>MAX_LS_AMOUNT)
+    {
+        object_error(&x->x_ob, "define-loudspeakers: ls %ld more than max %ld",ls_amount,MAX_LS_AMOUNT);
+        return;
+    }
 
+    memset(connections,0,MAX_LS_AMOUNT*MAX_LS_AMOUNT*sizeof(int));
     for (i = 0; i < ls_amount; i++)
     {
         for (j = i + 1; j < ls_amount; j++)
@@ -326,10 +337,10 @@ Auditory Displays -98.*/
 
 
     /*calculate distancies between all lss and sorting them*/
-    table_size = (((ls_amount - 1) * (ls_amount)) / 2);
+    int table_size = (((ls_amount - 1) * (ls_amount)) / 2);
     for (i     = 0; i < table_size; i++)
     {
-        distance_table[i] = 100000.0;
+        distance_table[i] = 100000.0f;
     }
     for (i = 0; i < ls_amount; i++)
     {
