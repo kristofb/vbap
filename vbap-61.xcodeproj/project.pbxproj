@@ -26,8 +26,8 @@
 		6D5CE906209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */; };
 		6D5CE907209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
 		6D5CE908209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
-		6D6F46DE09C17EDA003242AA /* vbap.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DC09C17EDA003242AA /* vbap.c */; };
-		6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */; };
+		6D6F46DE09C17EDA003242AA /* vbap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DC09C17EDA003242AA /* vbap.cpp */; };
+		6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DB09C17EDA003242AA /* define_loudspeakers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		6D5CE904209AFB3500E24EB7 /* MaxLua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxLua.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxLua.framework"; sourceTree = "<group>"; };
 		6D6BB64509FCC38C00E26C50 /* define_loudspeakers.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = define_loudspeakers.h; path = src/define_loudspeakers.h; sourceTree = "<group>"; };
-		6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = define_loudspeakers.c; path = src/define_loudspeakers.c; sourceTree = "<group>"; };
-		6D6F46DC09C17EDA003242AA /* vbap.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = vbap.c; path = src/vbap.c; sourceTree = "<group>"; };
+		6D6F46DB09C17EDA003242AA /* define_loudspeakers.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = define_loudspeakers.cpp; path = src/define_loudspeakers.cpp; sourceTree = "<group>"; };
+		6D6F46DC09C17EDA003242AA /* vbap.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = vbap.cpp; path = src/vbap.cpp; sourceTree = "<group>"; };
 		6D812195151859760054FAFB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6D812196151859760054FAFB /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		6D812197151859760054FAFB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -125,9 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				6DA5283609C30B730043F450 /* vbap.h */,
-				6D6F46DC09C17EDA003242AA /* vbap.c */,
+				6D6F46DC09C17EDA003242AA /* vbap.cpp */,
 				6D6BB64509FCC38C00E26C50 /* define_loudspeakers.h */,
-				6D6F46DB09C17EDA003242AA /* define_loudspeakers.c */,
+				6D6F46DB09C17EDA003242AA /* define_loudspeakers.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.c in Sources */,
+				6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6F46DE09C17EDA003242AA /* vbap.c in Sources */,
+				6D6F46DE09C17EDA003242AA /* vbap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,10 +302,6 @@
 		6D01887609B61235008C1160 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = All;
 			};
 			name = Development;
@@ -313,11 +309,8 @@
 		6D01887709B61235008C1160 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = All;
-				ZERO_LINK = NO;
 			};
 			name = Deployment;
 		};
@@ -353,6 +346,7 @@
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXPORTED_SYMBOLS_FILE = maxmsp.exp;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -379,9 +373,10 @@
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
+				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = macosx;
@@ -450,8 +445,10 @@
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-ftree-vectorize";
 				OTHER_CPLUSPLUSFLAGS = "-ftree-vectorize";
+				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = macosx;
@@ -492,6 +489,7 @@
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXPORTED_SYMBOLS_FILE = maxmsp.exp;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -518,8 +516,10 @@
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
+				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PRIVATE_HEADERS_FOLDER_PATH)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = macosx;
@@ -538,12 +538,9 @@
 		6DB2D19709C17FF900B4D9B8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.define-loudspeakers";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
 				SYMROOT = build;
@@ -553,11 +550,8 @@
 		6DB2D19809C17FF900B4D9B8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.define-loudspeakers";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
 				SYMROOT = build;
@@ -567,12 +561,9 @@
 		6DB2D19909C17FF900B4D9B8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SDK/max-sdk-7.3.3/source/c74support/max-includes",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-define_loudspeakers.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.define-loudspeakers";
 				PRODUCT_NAME = define_loudspeakers;
 				SKIP_INSTALL = NO;
 				SYMROOT = build;
@@ -584,8 +575,10 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.vbap";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
+				SYMROOT = build;
 			};
 			name = Development;
 		};
@@ -593,8 +586,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.vbap";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
+				SYMROOT = build;
 			};
 			name = Deployment;
 		};
@@ -603,8 +598,10 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info-vbap.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.v-p.vbap";
 				PRODUCT_NAME = vbap;
 				SKIP_INSTALL = NO;
+				SYMROOT = build;
 			};
 			name = Default;
 		};
