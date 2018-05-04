@@ -68,7 +68,7 @@ void vbap_assist(t_vbap *x, void *b, long m, long a, char *s)
 
 /* above are the prototypes for the methods/procedures/functions you will use */
 /*--------------------------------------------------------------------------*/
-int main(void)
+maxmsp_main()
 {
     maxmsp_create_class("vbap", vbap_class,
                         vbap_new,

@@ -12,10 +12,7 @@ See copyright in file with name COPYRIGHT  */
 
 #ifndef VBAP_OBJECT
 // If we are within VBAP (which includes define_loudspeakers), then don't create a main for define_loudspeakres
-#ifndef WIN32
-__attribute__((visibility("default")))
-#endif
-int main(void)
+maxmsp_main()
 {
     maxmsp_create_class("define_loudspeakers", def_ls_class,
                         def_ls_new,

@@ -141,5 +141,12 @@ cl = local_c;
 
 #define maxmsp_dsp_initclass() class_dspinit(local_c)
 
+#ifdef WIN32
+int main();
+#define maxmsp_main() int main(void)
+#else
+int main() __attribute__((visibility("default")));
+#define maxmsp_main() __attribute__((visibility("default"))) int main(void)
+#endif
 
 #endif
