@@ -427,7 +427,8 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
 
         final_gs[ls[0] - 1] += g[0];
         final_gs[ls[1] - 1] += g[1];
-        final_gs[ls[2] - 1] += g[2];
+        // Crash if ls[2] = 0 (set as zero few lines above); whatever, in this case, g[2] = 0, so useless to add it
+        if (ls[2]>0) final_gs[ls[2] - 1] += g[2];
     }
 }
 
