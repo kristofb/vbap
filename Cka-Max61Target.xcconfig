@@ -18,7 +18,7 @@
 C74SUPPORT = /Storage/Projets/Maximus/VBap/SDK/max-sdk-7.3.3/source/c74support
 HEADER_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 FRAMEWORK_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
-DSTROOT = /Users/kristof/Documents/Max 8/Packages/Logelloop 5 Max 8 crash/externals/OSX/CKa
+DSTROOT = /Users/kristof/Documents/Max 8/Packages/Logelloop 5/externals/OSX/CKa
 // (This next path is relative to DSTROOT)
 INSTALL_PATH = /
 
