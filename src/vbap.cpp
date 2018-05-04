@@ -128,9 +128,9 @@ void *vbap_new(long azi, long ele)
     x->x_outlet1 = intout(x);
     x->x_outlet0 = listout(x);
 
-    x->x_spread_base[0] = 0.0;
-    x->x_spread_base[1] = 1.0;
-    x->x_spread_base[2] = 0.0;
+    x->x_spread_base[0] = 0.0f;
+    x->x_spread_base[1] = 1.0f;
+    x->x_spread_base[2] = 0.0f;
     x->x_spread          = 0;
     x->x_lsset_available = 0;
 
@@ -256,7 +256,7 @@ void vbap(float g[3], long ls[3], t_vbap *x)
         neg_g_am = 3;
         for (j   = 0; j < dim; j++)
         {
-            gtmp[j] = 0.0;
+            gtmp[j] = 0.0f;
             for (k = 0; k < dim; k++)
             {
                 gtmp[j] += cartdir[k] * x->x_set_inv_matx[i][k + j * dim];
@@ -265,7 +265,7 @@ void vbap(float g[3], long ls[3], t_vbap *x)
             {
                 small_g = gtmp[j];
             }
-            if (gtmp[j] >= -0.01)
+            if (gtmp[j] >= -0.01f)
             {
                 neg_g_am--;
             }
@@ -286,7 +286,7 @@ void vbap(float g[3], long ls[3], t_vbap *x)
             }
             else
             {
-                g[2]  = 0.0;
+                g[2]  = 0.0f;
                 ls[2] = 0;
             }
         }
@@ -323,8 +323,8 @@ void vbap(float g[3], long ls[3], t_vbap *x)
         }
         else { new_cartdir[2] = 0; }
         cart_to_angle(new_cartdir, new_angle_dir);
-        x->x_azi = (long) (new_angle_dir[0] + 0.5);
-        x->x_ele = (long) (new_angle_dir[1] + 0.5);
+        x->x_azi = (long) (new_angle_dir[0] + 0.5f);
+        x->x_ele = (long) (new_angle_dir[1] + 0.5f);
     }
     //}
 
@@ -373,7 +373,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
         neg_g_am = 3;
         for (j   = 0; j < dim; j++)
         {
-            gtmp[j] = 0.0;
+            gtmp[j] = 0.0f;
             for (k = 0; k < dim; k++)
             {
                 gtmp[j] += cartdir[k] * x->x_set_inv_matx[i][k + j * dim];
@@ -382,7 +382,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
             {
                 small_g = gtmp[j];
             }
-            if (gtmp[j] >= -0.01)
+            if (gtmp[j] >= -0.01f)
             {
                 neg_g_am--;
             }
@@ -403,7 +403,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
             }
             else
             {
-                g[2]  = 0.0;
+                g[2]  = 0.0f;
                 ls[2] = 0;
             }
         }
@@ -412,7 +412,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x)
     gains_modified = 0;
     for (i         = 0; i < dim; i++)
     {
-        if (g[i] < -0.01)
+        if (g[i] < -0.01f)
         {
             gains_modified = 1;
         }
@@ -449,7 +449,7 @@ void new_spread_dir(t_vbap *x, float spreaddir[3], float vscartdir[3], float spr
                      vscartdir[1] * spread_base[1] +
                      vscartdir[2] * spread_base[2]) / M_PI * 180.f;
     }
-    beta  = 180 - gamma;
+    beta  = 180.f - gamma;
     b     = sin(x->x_spread * M_PI / 180) / sin(beta * M_PI / 180.f);
     a     = sin((180 - x->x_spread - beta) * M_PI / 180) / sin(beta * M_PI / 180);
     spreaddir[0] = (float) (a * vscartdir[0] + b * spread_base[0]);
@@ -469,7 +469,7 @@ void new_spread_base(t_vbap *x, float spreaddir[3], float vscartdir[3])
     double d;
     double power;
 
-    d = cos(x->x_spread / 180 * M_PI);
+    d = cos(x->x_spread / 180.f * M_PI);
     x->x_spread_base[0] = (float) (spreaddir[0] - d * vscartdir[0]);
     x->x_spread_base[1] = (float) (spreaddir[1] - d * vscartdir[1]);
     x->x_spread_base[2] = (float) (spreaddir[2] - d * vscartdir[2]);
@@ -552,11 +552,11 @@ void spread_it(t_vbap *x, float *final_gs)
     {
         for (i = 0; i < x->x_ls_amount; i++)
         {
-            final_gs[i] += (float) ((x->x_spread - 70) / 30.0 * (x->x_spread - 70) / 30.0 * 10.0);
+            final_gs[i] += (float) ((x->x_spread - 70.f) / 30.0f * (x->x_spread - 70.f) / 30.0f * 10.0f);
         }
     }
 
-    for (i = 0, power = 0.0; i < x->x_ls_amount; i++)
+    for (i = 0, power = 0.0f; i < x->x_ls_amount; i++)
     {
         power += final_gs[i] * final_gs[i];
     }
@@ -589,7 +589,7 @@ void vbap_bang(t_vbap *x)
         vbap(g, ls, x);
         for (i = 0; i < amount_allocated; i++)
         {
-            final_gs[i] = 0.0;
+            final_gs[i] = 0.0f;
         }
         for (i = 0; i < x->x_dimension; i++)
         {
