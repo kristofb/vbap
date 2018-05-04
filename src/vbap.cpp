@@ -33,7 +33,7 @@ void cart_to_angle(float cvec[3], float avec[3]);
 /*****************************************************
 	 INCLUDE ALL define_loudspeakers functions directly into VBAP
 ******************************************************/
-#include "define_loudspeakers.c"
+#include "define_loudspeakers.cpp"
 
 /*****************************************************
 	 Max Object Assist
