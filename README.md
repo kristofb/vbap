@@ -13,4 +13,4 @@ Windows build projects may be outdated as I use another build chain for Windows.
 If somebody is interested, you may merge this projects C++ & H files with
 https://github.com/nwolek/vbap
 
-
+Latest binaries are included in a zip file for Windows and OSX, compatible with Max 8
