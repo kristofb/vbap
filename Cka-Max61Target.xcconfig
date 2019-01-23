@@ -22,7 +22,7 @@ DSTROOT = /Users/kristof/Documents/Max 8/Packages/Logelloop 5/externals/OSX/CKa
 // (This next path is relative to DSTROOT)
 INSTALL_PATH = /
 
-ARCHS = i386 x86_64
+ARCHS = x86_64
 
 // Special Files
 //GCC_PREFIX_HEADER = $(C74SUPPORT)/max-includes/macho-prefix.pch
