@@ -13,7 +13,7 @@ Windows build projects may be outdated as I use another build chain for Windows.
 If somebody is interested, you may merge this project's C++ & H files with
 https://github.com/nwolek/vbap
 
-Latest binaries are included in a zip file for Windows and OSX, compatible with Max 8
+Latest binaries are included in a Binaries folder containing objects for Windows and OSX, compatible with Max 8
 
 
 You may find a M4L port using vbap here:
