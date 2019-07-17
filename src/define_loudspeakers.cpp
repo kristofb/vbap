@@ -142,7 +142,7 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 }
 
 
-void def_ls_read_directions(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
+void def_ls_read_directions(t_def_ls *x, t_symbol */*s*/, int ac, t_atom *av)
 // when loudspeaker directions come in a message
 {
     if (x->x_ls_read)
@@ -175,7 +175,7 @@ void ls_angles_to_cart(t_ls *ls)
 
 #ifndef VBAP_OBJECT
 /* create new instance of object... MUST send it an int even if you do nothing with this int!! */
-void *def_ls_new(t_symbol *s, int ac, t_atom *av)
+void *def_ls_new(t_symbol */*s*/, int ac, t_atom *av)
 {
     // s is object name (we ignore it)
     t_def_ls *x = (t_def_ls *) object_alloc(def_ls_class);
@@ -189,7 +189,7 @@ void *def_ls_new(t_symbol *s, int ac, t_atom *av)
 #endif
 
 /* define-loudspeakers message integrated into vbap object */
-void vbap_def_ls(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
+void vbap_def_ls(t_def_ls *x, t_symbol */*s*/, int ac, t_atom *av)
 {
     initContent_ls_directions(x, ac, av); // Initialize object internal data from a ls-directions list
     def_ls_bang(x); // calculate and send matrix to vbap
