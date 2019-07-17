@@ -86,7 +86,7 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
     t_ls_set *trip_ptr, *tmp_ptr;
     if (x->x_ls_read == 0)
     {
-        object_error(&x->x_ob, "define_loudspeakers: Define loudspeaker directions first!");
+        object_error(&x->x_ob, "define_loudspeakers: Define loudspeaker directions first! %s",s->s_name);
         return;
     }
 
