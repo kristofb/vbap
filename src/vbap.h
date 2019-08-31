@@ -114,7 +114,7 @@ typedef struct
 
 /** Enable/Disable traces */
 static bool _enable_trace = false;
-void traces(t_def_ls */*x*/, long n)
+void traces(t_def_ls * /*x*/, long n)
 {
     _enable_trace = n ? true : false;
 }
