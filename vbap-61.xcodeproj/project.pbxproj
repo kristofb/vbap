@@ -209,17 +209,18 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = 6D12FC800949E8A100AA034B /* Build configuration list for PBXProject "vbap-61" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				fr,
+				de,
+				Base,
+				ja,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* logelloop.sound */;
 			projectDirPath = "";
