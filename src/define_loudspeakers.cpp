@@ -294,7 +294,7 @@ Auditory Displays -98.*/
     int      connections[MAX_LS_AMOUNT][MAX_LS_AMOUNT];
     //float angles[MAX_LS_AMOUNT];
     //int sorted_angles[MAX_LS_AMOUNT];
-    float    distance_table[((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2)];
+    float    distance_table  [((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2)];
     int      distance_table_i[((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2)];
     int      distance_table_j[((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2)];
     float    distance;
@@ -312,7 +312,12 @@ Auditory Displays -98.*/
         return;
     }
 
+	memset(distance_table  , 0, ((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2) * sizeof(float));
+	memset(distance_table_i, 0, ((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2) * sizeof(int));
+	memset(distance_table_j, 0, ((MAX_LS_AMOUNT * (MAX_LS_AMOUNT - 1)) / 2) * sizeof(int));
+
     memset(connections,0,MAX_LS_AMOUNT*MAX_LS_AMOUNT*sizeof(int));
+
     for (i = 0; i < ls_amount; i++)
     {
         for (j = i + 1; j < ls_amount; j++)
