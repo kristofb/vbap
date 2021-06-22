@@ -22,10 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		6D5CE905209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */; };
-		6D5CE906209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */; };
-		6D5CE907209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
-		6D5CE908209AFB3500E24EB7 /* MaxLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5CE904209AFB3500E24EB7 /* MaxLua.framework */; };
+		6D6BC78E26700C8200B82D1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BC78D26700C8200B82D1C /* MaxAPI.framework */; };
+		6D6BC78F26700C8200B82D1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BC78D26700C8200B82D1C /* MaxAPI.framework */; };
 		6D6F46DE09C17EDA003242AA /* vbap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DC09C17EDA003242AA /* vbap.cpp */; };
 		6DB2D1A109C1804A00B4D9B8 /* define_loudspeakers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F46DB09C17EDA003242AA /* define_loudspeakers.cpp */; };
 /* End PBXBuildFile section */
@@ -50,9 +48,8 @@
 /* Begin PBXFileReference section */
 		6D116AF009C41A0D00705233 /* Info-define_loudspeakers.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-define_loudspeakers.plist"; path = "src/Info-define_loudspeakers.plist"; sourceTree = "<group>"; };
 		6D116AF109C41A0D00705233 /* Info-vbap.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "Info-vbap.plist"; path = "src/Info-vbap.plist"; sourceTree = "<group>"; };
-		6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		6D5CE904209AFB3500E24EB7 /* MaxLua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxLua.framework; path = "SDK/max-sdk-7.3.3/source/c74support/max-includes/MaxLua.framework"; sourceTree = "<group>"; };
 		6D6BB64509FCC38C00E26C50 /* define_loudspeakers.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = define_loudspeakers.h; path = src/define_loudspeakers.h; sourceTree = "<group>"; };
+		6D6BC78D26700C8200B82D1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../AppliMax/Cycling/SDKInUse/MaxSDK-8.2.0/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		6D6F46DB09C17EDA003242AA /* define_loudspeakers.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = define_loudspeakers.cpp; path = src/define_loudspeakers.cpp; sourceTree = "<group>"; };
 		6D6F46DC09C17EDA003242AA /* vbap.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = vbap.cpp; path = src/vbap.cpp; sourceTree = "<group>"; };
 		6D812195151859760054FAFB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -70,8 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5CE908209AFB3500E24EB7 /* MaxLua.framework in Frameworks */,
-				6D5CE906209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */,
+				6D6BC78F26700C8200B82D1C /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5CE907209AFB3500E24EB7 /* MaxLua.framework in Frameworks */,
-				6D5CE905209AFB3500E24EB7 /* MaxAPI.framework in Frameworks */,
+				6D6BC78E26700C8200B82D1C /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +99,7 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6D5CE903209AFB3500E24EB7 /* MaxAPI.framework */,
-				6D5CE904209AFB3500E24EB7 /* MaxLua.framework */,
+				6D6BC78D26700C8200B82D1C /* MaxAPI.framework */,
 				6D812195151859760054FAFB /* Accelerate.framework */,
 				6D812196151859760054FAFB /* ApplicationServices.framework */,
 				6D812197151859760054FAFB /* CoreFoundation.framework */,
@@ -379,8 +373,6 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
 				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";
@@ -455,8 +447,6 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-ftree-vectorize";
 				OTHER_CPLUSPLUSFLAGS = "-ftree-vectorize";
 				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";
@@ -530,8 +520,6 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = /;
 				MACH_O_TYPE = mh_bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CPLUSPLUSFLAGS)";
 				OTHER_LDFLAGS = "@$(C74SUPPORT)/max-includes/c74_linker_flags.txt";

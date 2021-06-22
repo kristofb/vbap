@@ -15,24 +15,19 @@
 
 
 // Paths
-C74SUPPORT = /Storage/Projets/Maximus/VBap/SDK/max-sdk-7.3.3/source/c74support
+//C74SUPPORT = /Storage/Projets/Maximus/VBap/SDK/max-sdk-7.3.3/source/c74support
+C74SUPPORT = /Users/kristof/Storage/Projets/AppliMax/Cycling/SDKInUse/MaxSDK-8.2.0/source/c74support
 HEADER_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 FRAMEWORK_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 DSTROOT = /Users/kristof/Documents/Max 8/Packages/Logelloop 5/externals/OSX/CKa
 // (This next path is relative to DSTROOT)
 INSTALL_PATH = /
 
-ARCHS = x86_64
-
-// Special Files
-//GCC_PREFIX_HEADER = $(C74SUPPORT)/max-includes/macho-prefix.pch
-//GCC_PREFIX_HEADER = cka-prefix.pch
-//INFOPLIST_FILE = $(SRCROOT)/../Info-$(PROJECT_NAME).plist
-
 // Architecture and Deployment
-//ARCHS = i386
-//SDKROOT = /Developer/SDKs/MacOSX10.6.sdk
-MACOSX_DEPLOYMENT_TARGET = 10.10
+ARCHS = x86_64 arm64
+VALID_ARCHS = x86_64 arm64
+ONLY_ACTIVE_ARCH = NO
+MACOSX_DEPLOYMENT_TARGET = 10.11
 
 // Preprocessor Defines
 GCC_PREPROCESSOR_DEFINITIONS = "DENORM_WANT_FIX = 1" "NO_TRANSLATION_SUPPORT = 1"
